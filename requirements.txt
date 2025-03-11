@@ -2,3 +2,14 @@ pandas
 ensure
 scipy
 Flask
+mlflow
+notebook
+scikit-learn
+matplotlib
+python-box
+pyYAML
+Flask-Cors
+joblib
+types-pyYAML
+seaborn
+-e .

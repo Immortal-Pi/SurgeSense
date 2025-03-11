@@ -1,0 +1,20 @@
+Metadata-Version: 2.2
+Name: SurgeSense
+Version: 0.0.0
+Summary: A python package to predict cab prices
+Home-page: http://github.com/Immortal-Pi/SurgeSense
+Author: Immortal-Pi
+Author-email: amruthpaiuni@gmail.com
+Project-URL: Bug Tracker, https://github.com/Immortal-Pi/SurgeSense/issues
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: project-url
+Dynamic: summary
+
+# Surge Sense
+
+look up in the sky! its a bird? its a plane? no its immortalpi XD
