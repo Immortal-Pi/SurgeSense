@@ -1,0 +1,4 @@
+pandas 
+ensure
+scipy
+Flask
