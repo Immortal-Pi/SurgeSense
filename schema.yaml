@@ -1,2 +1,25 @@
-test:
-  a: a 
+COLUMNS:
+  distance: float64
+  cab_type: object
+  destination: object
+  source: object
+  price: float64
+  surge_multiplier: float64
+  name: object
+  date_time: object
+  temp: float64
+  location: object
+  clouds: float64
+  pressure: float64
+  rain: float64
+  humidity: float64
+  wind: float64
+  day: int64
+  hour: int64
+  month: int64
+
+TARGET_COLUMN:
+  name: price
+
+COLUMN_COUNT:
+  number: 18  

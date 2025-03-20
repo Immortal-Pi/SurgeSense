@@ -2,6 +2,19 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_url: https://drive.google.com/file/d/1UqfvtCcJkRIPszFjh7PznkbPMOnjYK5z/view?usp=sharing
+  source_url: https://drive.google.com/file/d/1tO5YBKb9rNkMbhDp3PuG_mL1fMov1yJ3/view?usp=sharing
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
+
+
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir: artifacts/data_ingestion/cab_data/cleaned_dataset.csv
+  STATUS_FILE: artifacts/data_validation/status.txt 
+
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/cab_data/cleaned_dataset.csv 
+
+model_trainer:
