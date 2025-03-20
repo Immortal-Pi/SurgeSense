@@ -219,3 +219,78 @@
 [2025-03-20 07:09:06,550: INFO :common : created directory at: artifacts]
 [2025-03-20 07:09:06,552: INFO :common : created directory at: artifacts/data_validation]
 [2025-03-20 07:09:08,709: INFO :542472409 : Validation status: True]
+[2025-03-20 07:23:32,909: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 07:23:32,911: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-03-20 07:23:32,920: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-03-20 07:23:32,922: INFO :common : created directory at: artifacts]
+[2025-03-20 07:23:32,923: INFO :common : created directory at: artifacts/data_validation]
+[2025-03-20 07:23:34,792: INFO :542472409 : Validation status: False]
+[2025-03-20 07:23:53,349: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 07:23:53,352: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-03-20 07:23:53,356: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-03-20 07:23:53,357: INFO :common : created directory at: artifacts]
+[2025-03-20 07:23:53,358: INFO :common : created directory at: artifacts/data_validation]
+[2025-03-20 07:23:55,356: INFO :542472409 : Validation status: True]
+[2025-03-20 07:24:04,184: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 07:24:04,187: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-03-20 07:24:04,192: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-03-20 07:24:04,194: INFO :common : created directory at: artifacts]
+[2025-03-20 07:24:04,195: INFO :common : created directory at: artifacts/data_validation]
+[2025-03-20 07:24:06,178: INFO :542472409 : Validation status: False]
+[2025-03-20 07:24:17,524: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 07:24:17,526: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-03-20 07:24:17,530: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-03-20 07:24:17,531: INFO :common : created directory at: artifacts]
+[2025-03-20 07:24:17,532: INFO :common : created directory at: artifacts/data_validation]
+[2025-03-20 07:24:19,510: INFO :542472409 : Validation status: True]
+[2025-03-20 07:47:33,398: INFO :main : look up in the sky! its a bird? its a plane? no its immortalpi in the main function]
+[2025-03-20 07:47:33,398: INFO :main : >>>>> stage DATA INGESTION STAGE started <<<<<]
+[2025-03-20 07:47:33,401: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 07:47:33,414: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-03-20 07:47:33,418: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-03-20 07:47:33,418: INFO :common : created directory at: artifacts]
+[2025-03-20 07:47:33,420: INFO :common : created directory at: artifacts/data_ingestion]
+[2025-03-20 07:47:33,421: INFO :data_ingestion : Downloading data from https://drive.google.com/file/d/1tO5YBKb9rNkMbhDp3PuG_mL1fMov1yJ3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-20 07:47:50,374: INFO :data_ingestion : Downloaded data from https://drive.google.com/file/d/1tO5YBKb9rNkMbhDp3PuG_mL1fMov1yJ3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-20 07:47:50,987: INFO :data_ingestion : Extracted data from zip file at artifacts/data_ingestion]
+[2025-03-20 07:47:50,988: INFO :main : >>>>> stage DATA INGESTION STAGE completed <<<<< 
+ ]
+[2025-03-20 07:47:50,988: INFO :main : >>>>> stage DATA VALIDATION STAGE started <<<<<]
+[2025-03-20 07:47:50,990: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 07:47:50,991: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-03-20 07:47:50,994: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-03-20 07:47:50,995: INFO :common : created directory at: artifacts]
+[2025-03-20 07:47:50,995: INFO :common : created directory at: artifacts/data_validation]
+[2025-03-20 07:47:50,996: ERROR :main : name 'pd' is not defined]
+Traceback (most recent call last):
+  File "D:\pythonProjects\SurgeSense\main.py", line 21, in <module>
+    obj.main()
+  File "d:\pythonprojects\surgesense\src\SurgeSense\pipeline\data_validation_stage.py", line 15, in main
+    data_validation.validate_all_columns()
+  File "d:\pythonprojects\surgesense\src\SurgeSense\components\data_validation.py", line 32, in validate_all_columns
+    raise e
+  File "d:\pythonprojects\surgesense\src\SurgeSense\components\data_validation.py", line 11, in validate_all_columns
+    data=pd.read_csv(self.config.unzip_data_dir)
+NameError: name 'pd' is not defined
+[2025-03-20 07:48:25,852: INFO :main : look up in the sky! its a bird? its a plane? no its immortalpi in the main function]
+[2025-03-20 07:48:25,852: INFO :main : >>>>> stage DATA INGESTION STAGE started <<<<<]
+[2025-03-20 07:48:25,855: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 07:48:25,855: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-03-20 07:48:25,858: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-03-20 07:48:25,859: INFO :common : created directory at: artifacts]
+[2025-03-20 07:48:25,859: INFO :common : created directory at: artifacts/data_ingestion]
+[2025-03-20 07:48:25,860: INFO :data_ingestion : Downloading data from https://drive.google.com/file/d/1tO5YBKb9rNkMbhDp3PuG_mL1fMov1yJ3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-20 07:48:32,981: INFO :data_ingestion : Downloaded data from https://drive.google.com/file/d/1tO5YBKb9rNkMbhDp3PuG_mL1fMov1yJ3/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2025-03-20 07:48:33,553: INFO :data_ingestion : Extracted data from zip file at artifacts/data_ingestion]
+[2025-03-20 07:48:33,554: INFO :main : >>>>> stage DATA INGESTION STAGE completed <<<<< 
+ ]
+[2025-03-20 07:48:33,554: INFO :main : >>>>> stage DATA VALIDATION STAGE started <<<<<]
+[2025-03-20 07:48:33,556: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 07:48:33,557: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-03-20 07:48:33,560: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-03-20 07:48:33,561: INFO :common : created directory at: artifacts]
+[2025-03-20 07:48:33,562: INFO :common : created directory at: artifacts/data_validation]
+[2025-03-20 07:48:35,681: INFO :data_validation : Validation status: True]
+[2025-03-20 07:48:35,705: INFO :main : >>>>> stage DATA VALIDATION STAGE completed <<<<< 
+
+ x==========x]
