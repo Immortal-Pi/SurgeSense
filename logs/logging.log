@@ -294,3 +294,12 @@ NameError: name 'pd' is not defined
 [2025-03-20 07:48:35,705: INFO :main : >>>>> stage DATA VALIDATION STAGE completed <<<<< 
 
  x==========x]
+[2025-03-20 13:09:10,166: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 13:09:10,168: INFO :common : created directory at: artifacts]
+[2025-03-20 13:09:10,170: INFO :common : created directory at: artifacts/data_transformation]
+[2025-03-20 13:09:44,503: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 13:09:44,505: INFO :common : created directory at: artifacts]
+[2025-03-20 13:09:44,507: INFO :common : created directory at: artifacts/data_transformation]
+[2025-03-20 13:10:32,900: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-20 13:10:32,902: INFO :common : created directory at: artifacts]
+[2025-03-20 13:10:32,903: INFO :common : created directory at: artifacts/data_transformation]
