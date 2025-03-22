@@ -22,4 +22,27 @@ TARGET_COLUMN:
   name: price
 
 COLUMN_COUNT:
-  number: 18  
+  number: 18 
+
+TRANSFORM:
+  CATEGORICAL_DATA: 
+    - 'cab_type'
+    - 'destination'
+    - 'source'
+    - 'name'
+
+  NUMERICAL_DATA:
+    - 'distance'
+    - 'surge_multiplier'
+    - 'temp'
+    - 'clouds'
+    - 'pressure'
+    - 'rain'
+    - 'humidity'
+    - 'wind'
+    - 'day'
+    - 'hour'
+    - 'month'
+
+
+

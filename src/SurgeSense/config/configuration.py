@@ -1,6 +1,6 @@
 from SurgeSense.constants import * 
 from SurgeSense.utils.common import read_yaml,create_directories
-from SurgeSense.entity.config_entity import DataIngestionConfig, DataValidationConfig
+from SurgeSense.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
 
 class ConfigurationManager:
     def __init__(self,
@@ -38,3 +38,17 @@ class ConfigurationManager:
             all_schema=schema 
         )
         return data_validation_config
+    
+
+    def get_data_transformation_config(self)->DataTransformationConfig:
+        config=self.config.data_transformation 
+        schema=self.schema.TRANSFORM
+        create_directories([config.root_dir])
+
+        data_transformation_config=DataTransformationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            categorical_columns=schema.CATEGORICAL_DATA,
+            numerical_columns=schema.NUMERICAL_DATA
+        )
+        return data_transformation_config
