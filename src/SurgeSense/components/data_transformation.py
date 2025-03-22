@@ -20,7 +20,7 @@ class DataTransformation:
 
 
     def transform_data_pipeline(self):
-        data=pd.read_csv(self.config.data_path)
+        # data=pd.read_csv(self.config.data_path)
         categorical_columns=self.config.categorical_columns
         numerical_columns=self.config.numerical_columns
         numerical_preprocessor=Pipeline(

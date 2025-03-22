@@ -37,15 +37,3 @@ if __name__=='__main__':
         raise e 
 
 
-
-
-
-
-try: 
-    config=ConfigurationManager()
-    data_transformation_config=config.get_data_transformation_config()
-    data_transform=DataTransformation(config=data_transformation_config)
-    pipeline=data_transform.transform_data_pipeline()
-    data_transform.train_test_spliting(pipeline)
-except Exception as e:
-    raise e 
