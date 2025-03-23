@@ -22,3 +22,5 @@
 [2025-03-22 18:24:53,859: INFO :1907565740 : splitting the data into train and test set]
 [2025-03-22 18:24:53,860: INFO :1907565740 : training set shape: (873747, 18)]
 [2025-03-22 18:24:53,861: INFO :1907565740 : testing set shape: (291249, 18)]
+[2025-03-23 14:45:26,891: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-03-23 14:45:26,902: INFO :common : yaml file: params.yaml loaded successfully]
