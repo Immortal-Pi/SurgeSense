@@ -1,0 +1,66 @@
+stages: 
+  data_ingestion:
+    cmd: python src/SurgeSense/pipeline/data_ingestion_stage.py
+    deps:
+      - src/SurgeSense/pipeline/data_ingestion_stage.py
+      - config/config.yaml
+    outs:
+      - artifacts/data_ingestion/cab_data
+  
+  data_validation:
+    cmd: python src/SurgeSense/pipeline/data_validation_stage.py
+    deps:
+      - src/SurgeSense/pipeline/data_validation_stage.py
+      - config/config.yaml
+      - schema.yaml 
+    params:
+      - select_model.algo
+      - select_model.n_estimators
+      - select_model.max_depth
+      - select_model.min_samples_split
+      - select_model.learning_rate 
+
+  data_transformation:
+    cmd: python src/SurgeSense/pipeline/data_transform_stage.py
+    deps:
+      - src/SurgeSense/pipeline/data_transform_stage.py
+      - artifacts/data_validation
+      - config/config.yaml
+      - schema.yaml
+    outs:
+      - artifacts/data_transformation
+
+  model_trainer:
+    cmd: python src/SurgeSense/pipeline/model_trainer.py
+    deps:
+      - src/SurgeSense/pipeline/model_trainer.py
+      - artifacts/data_transformation
+      - config/config.yaml
+      - schema.yaml
+    params:
+      - select_model.algo
+      - select_model.n_estimators
+      - select_model.max_depth
+      - select_model.min_samples_split
+      - select_model.learning_rate 
+    outs:
+      - artifacts/model_trainer
+
+  model_evaluation:
+    cmd: python src/SurgeSense/pipeline/model_evaluation.py
+    deps:
+      - src/SurgeSense/pipeline/model_evaluation.py
+      - artifacts/model_trainer/model.joblib
+      - artifacts/data_transformation
+      - config/config.yaml
+      - schema.yaml 
+    params:
+      - select_model.algo
+      - select_model.n_estimators
+      - select_model.max_depth
+      - select_model.min_samples_split
+      - select_model.learning_rate
+    outs:
+      - artifacts/model_evaluation
+
+     

@@ -1,0 +1,144 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/SurgeSense/pipeline/data_ingestion_stage.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: ed629b71afc1e7324e23a9bd68d6a94b
+      size: 1112
+    - path: src/SurgeSense/pipeline/data_ingestion_stage.py
+      hash: md5
+      md5: 3f5a440c39a2e3390131230260d3a552
+      size: 888
+    outs:
+    - path: artifacts/data_ingestion/cab_data
+      hash: md5
+      md5: c5b568bab7659e8408f25e5bd66d0d9f.dir
+      size: 162703954
+      nfiles: 1
+  data_validation:
+    cmd: python src/SurgeSense/pipeline/data_validation_stage.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: ed629b71afc1e7324e23a9bd68d6a94b
+      size: 1112
+    - path: schema.yaml
+      hash: md5
+      md5: f4a26760d48f3ce94f0c0575ee8b9903
+      size: 730
+    - path: src/SurgeSense/pipeline/data_validation_stage.py
+      hash: md5
+      md5: b68fd089ea8f0d97cb0b620d35325715
+      size: 855
+    params:
+      params.yaml:
+        select_model.algo: XGBoostRegressor
+        select_model.learning_rate: 0.1
+        select_model.max_depth: 15
+        select_model.min_samples_split: 0
+        select_model.n_estimators: 500
+  data_transformation:
+    cmd: python src/SurgeSense/pipeline/data_transform_stage.py
+    deps:
+    - path: artifacts/data_validation
+      hash: md5
+      md5: 0ccb3ea5849272ff03be5ab71786b9ff.dir
+      size: 23
+      nfiles: 1
+    - path: config/config.yaml
+      hash: md5
+      md5: ed629b71afc1e7324e23a9bd68d6a94b
+      size: 1112
+    - path: schema.yaml
+      hash: md5
+      md5: f4a26760d48f3ce94f0c0575ee8b9903
+      size: 730
+    - path: src/SurgeSense/pipeline/data_transform_stage.py
+      hash: md5
+      md5: 0d18ded955cefcfd30eed0877f9d22b7
+      size: 1374
+    params:
+      params.yaml:
+        select_model.algo: XGBoostRegressor
+        select_model.learning_rate: 0.1
+        select_model.max_depth: 15
+        select_model.min_samples_split: 0
+        select_model.n_estimators: 500
+    outs:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: efbd12504a63d783c0971ac10d232cc5.dir
+      size: 162704094
+      nfiles: 2
+  model_trainer:
+    cmd: python src/SurgeSense/pipeline/model_trainer.py
+    deps:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: efbd12504a63d783c0971ac10d232cc5.dir
+      size: 162704094
+      nfiles: 2
+    - path: config/config.yaml
+      hash: md5
+      md5: ed629b71afc1e7324e23a9bd68d6a94b
+      size: 1112
+    - path: schema.yaml
+      hash: md5
+      md5: f4a26760d48f3ce94f0c0575ee8b9903
+      size: 730
+    - path: src/SurgeSense/pipeline/model_trainer.py
+      hash: md5
+      md5: baa74250e5bdb3355153adb3a2f8224f
+      size: 871
+    params:
+      params.yaml:
+        select_model.algo: XGBoostRegressor
+        select_model.learning_rate: 0.1
+        select_model.max_depth: 15
+        select_model.min_samples_split: 0
+        select_model.n_estimators: 500
+    outs:
+    - path: artifacts/model_trainer
+      hash: md5
+      md5: b999d123c04f815a0a26f5a8302ba9bb.dir
+      size: 167226768
+      nfiles: 1
+  model_evaluation:
+    cmd: python src/SurgeSense/pipeline/model_evaluation.py
+    deps:
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: efbd12504a63d783c0971ac10d232cc5.dir
+      size: 162704094
+      nfiles: 2
+    - path: artifacts/model_trainer/model.joblib
+      hash: md5
+      md5: e75e71675875bab4118e8d105dc92ba6
+      size: 167226768
+    - path: config/config.yaml
+      hash: md5
+      md5: ed629b71afc1e7324e23a9bd68d6a94b
+      size: 1112
+    - path: schema.yaml
+      hash: md5
+      md5: f4a26760d48f3ce94f0c0575ee8b9903
+      size: 730
+    - path: src/SurgeSense/pipeline/model_evaluation.py
+      hash: md5
+      md5: 1795b8565791deb1078e4ab1064414c9
+      size: 859
+    params:
+      params.yaml:
+        select_model.algo: XGBoostRegressor
+        select_model.learning_rate: 0.1
+        select_model.max_depth: 15
+        select_model.min_samples_split: 0
+        select_model.n_estimators: 500
+    outs:
+    - path: artifacts/model_evaluation
+      hash: md5
+      md5: 19a41947634ace4ca8a1c6323cc0f8c5.dir
+      size: 105
+      nfiles: 1
