@@ -1,6 +1,6 @@
 from SurgeSense.constants import * 
 from SurgeSense.utils.common import read_yaml,create_directories
-from SurgeSense.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
+from SurgeSense.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainConfig, ModelEvaluationConfig
 
 class ConfigurationManager:
     def __init__(self,
@@ -52,3 +52,45 @@ class ConfigurationManager:
             numerical_columns=schema.NUMERICAL_DATA
         )
         return data_transformation_config
+    
+    def get_model_train_config(self)->ModelTrainConfig:
+        config=self.config.model_trainer
+        params=self.param.select_model 
+        schema=self.schema.TARGET_COLUMN
+        create_directories([config.root_dir])
+
+        model_train_config=ModelTrainConfig(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            test_data_path=config.test_data_path,
+            model_name=config.model_name,
+            n_estimators=params.n_estimators,
+            max_depth=params.max_depth,
+            min_samples_split=params.min_samples_split,
+            learning_rate=params.learning_rate,
+            select_model=params.algo,
+            target_column=schema.name
+        )
+
+        return model_train_config
+    
+    def get_model_evaluation_config(self)->ModelEvaluationConfig:
+        config=self.config.model_evaluation
+        params=self.param.select_model
+        schema=self.schema.TARGET_COLUMN
+        mlflow_tracking=self.config.mlflow_tracking
+        create_directories([config.root_dir])
+
+
+        model_evlution_config=ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            test_data_path=config.test_data_path,
+            model_path=config.model_path,
+            all_params=params,
+            metric_file_name=config.metric_file_name,
+            target_column=schema.name,
+            repo_owner=mlflow_tracking.repo_owner,
+            repo_name=mlflow_tracking.repo_name
+        )
+
+        return model_evlution_config

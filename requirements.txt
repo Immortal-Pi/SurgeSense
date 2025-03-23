@@ -13,4 +13,5 @@ joblib
 types-pyYAML
 seaborn
 xgboost
+dagshub
 -e .

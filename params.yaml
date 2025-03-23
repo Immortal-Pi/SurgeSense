@@ -1,9 +1,21 @@
 RANDOM_FOREST:
-  - n_estimators: 5
-  - max_depth: 5
-  - min_samples_split: 5
+  n_estimators: 100
+  max_depth: None
+  min_samples_split: 5
 
-GRAGIENT_BOOSTING:
-  - n_estimators:
-  - estima
-  - 
+GRADIENT_BOOSTING:
+  learning_rate: 0.1
+  n_estimators: 100
+  max_depth: 5 
+
+XGBoostRegressor:
+  learning_rate: 0.1
+  n_estimators: 100
+  max_depth: 5
+
+select_model: 
+  algo: XGBoostRegressor
+  n_estimators: 200
+  max_depth: 15
+  min_samples_split: 0       # set 0 if not required 
+  learning_rate: 0.1         # set 0 if not required
