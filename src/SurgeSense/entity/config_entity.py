@@ -45,3 +45,36 @@ class ModelEvaluationConfig:
     target_column: str 
     repo_owner: str 
     repo_name: str
+
+@dataclass(frozen=True)
+class HyperOptParamsXGBoost:
+    root_dir: Path
+    train_data_path: Path 
+    test_data_path: Path
+    model_name: str
+    n_estimators: list 
+    max_depth: list 
+    learning_rate: str 
+    target_column: str
+
+@dataclass(frozen=True)
+class HyperOptParamsGradientBoosting:
+    root_dir: Path
+    train_data_path: Path 
+    test_data_path: Path
+    model_name: str
+    n_estimators: list 
+    max_depth: list 
+    learning_rate: str 
+    target_column: str
+
+@dataclass(frozen=True)
+class HyperOptParamsRandomForest:
+    root_dir: Path
+    train_data_path: Path 
+    test_data_path: Path
+    model_name: str
+    n_estimators: list 
+    max_depth: list 
+    min_samples_split: int 
+    target_column: str

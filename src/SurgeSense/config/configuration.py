@@ -1,6 +1,6 @@
 from SurgeSense.constants import * 
 from SurgeSense.utils.common import read_yaml,create_directories
-from SurgeSense.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainConfig, ModelEvaluationConfig
+from SurgeSense.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainConfig, ModelEvaluationConfig, HyperOptParamsGradientBoosting, HyperOptParamsRandomForest, HyperOptParamsXGBoost
 
 class ConfigurationManager:
     def __init__(self,
@@ -94,3 +94,54 @@ class ConfigurationManager:
         )
 
         return model_evlution_config
+    
+    def get_hyperopt_config_XGBoost(self)->HyperOptParamsXGBoost:
+        config=self.config.model_trainer 
+        params=self.param.Hyperopt_params.XGBoostRegressor
+        schema=self.schema.TARGET_COLUMN
+
+        hypoeropt_config=HyperOptParamsXGBoost(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            test_data_path=config.test_data_path,
+            model_name=config.model_name,
+            n_estimators=params.n_estimators,
+            max_depth=params.max_depth,
+            learning_rate=params.learning_rate,
+            target_column=schema.name
+        )
+        return hypoeropt_config
+    
+    def get_hyperopt_config_GradientBoosting(self)->HyperOptParamsGradientBoosting:
+        config=self.config.model_trainer 
+        params=self.param.Hyperopt_params.GRADIENT_BOOSTING
+        schema=self.schema.TARGET_COLUMN
+
+        hypoeropt_config=HyperOptParamsGradientBoosting(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            test_data_path=config.test_data_path,
+            model_name=config.model_name,
+            n_estimators=params.n_estimators,
+            max_depth=params.max_depth,
+            learning_rate=params.learning_rate,
+            target_column=schema.name
+        )
+        return hypoeropt_config
+    
+    def get_hyperopt_config_RandomForest(self)->HyperOptParamsRandomForest:
+        config=self.config.model_trainer 
+        params=self.param.Hyperopt_params.RANDOM_FOREST
+        schema=self.schema.TARGET_COLUMN
+
+        hypoeropt_config=HyperOptParamsRandomForest(
+            root_dir=config.root_dir,
+            train_data_path=config.train_data_path,
+            test_data_path=config.test_data_path,
+            model_name=config.model_name,
+            n_estimators=params.n_estimators,
+            max_depth=params.max_depth,
+            min_samples_split=params.min_samples_split,
+            target_column=schema.name
+        )
+        return hypoeropt_config

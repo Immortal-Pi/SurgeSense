@@ -1,3 +1,5 @@
 # Surge Sense
 
-look up in the sky! its a bird? its a plane? no its immortalpi XD
+to hyper parameter training run python hyperparameter_tuning RandomForest - for tuning randomforest 
+to hyper parameter training run python hyperparameter_tuning RandomForest - for tuning XGBoost 
+to hyper parameter training run python hyperparameter_tuning RandomForest - for tuning GradientBoosting 
