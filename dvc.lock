@@ -36,7 +36,7 @@ stages:
       params.yaml:
         select_model.algo: XGBoostRegressor
         select_model.learning_rate: 0.1
-        select_model.max_depth: 15
+        select_model.max_depth: 20
         select_model.min_samples_split: 0
         select_model.n_estimators: 500
   data_transformation:
@@ -96,14 +96,14 @@ stages:
       params.yaml:
         select_model.algo: XGBoostRegressor
         select_model.learning_rate: 0.1
-        select_model.max_depth: 15
+        select_model.max_depth: 20
         select_model.min_samples_split: 0
         select_model.n_estimators: 500
     outs:
     - path: artifacts/model_trainer
       hash: md5
-      md5: b999d123c04f815a0a26f5a8302ba9bb.dir
-      size: 167226768
+      md5: f5cb9b6e9850fa5bed0560888abffaa4.dir
+      size: 755630236
       nfiles: 1
   model_evaluation:
     cmd: python src/SurgeSense/pipeline/model_evaluation.py
@@ -115,8 +115,8 @@ stages:
       nfiles: 2
     - path: artifacts/model_trainer/model.joblib
       hash: md5
-      md5: e75e71675875bab4118e8d105dc92ba6
-      size: 167226768
+      md5: 66432f4f5c0f8ca6c7c5058076e77a3e
+      size: 755630236
     - path: config/config.yaml
       hash: md5
       md5: ed629b71afc1e7324e23a9bd68d6a94b
@@ -133,12 +133,12 @@ stages:
       params.yaml:
         select_model.algo: XGBoostRegressor
         select_model.learning_rate: 0.1
-        select_model.max_depth: 15
+        select_model.max_depth: 20
         select_model.min_samples_split: 0
         select_model.n_estimators: 500
     outs:
     - path: artifacts/model_evaluation
       hash: md5
-      md5: 19a41947634ace4ca8a1c6323cc0f8c5.dir
+      md5: ba8434c73b0d70d7cc86ddc1a4c16cfc.dir
       size: 105
       nfiles: 1
