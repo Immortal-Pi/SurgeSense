@@ -36,7 +36,7 @@ Hyperopt_params:
 
 select_model: 
   algo: XGBoostRegressor
-  n_estimators: 220
+  n_estimators: 150
   max_depth: 15
   min_samples_split: 0       # set 0 if not required 
   learning_rate: 0.1         # set 0 if not required

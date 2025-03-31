@@ -40,9 +40,15 @@ TRANSFORM:
     - 'rain'
     - 'humidity'
     - 'wind'
-    - 'day'
+    # - 'day'
     - 'hour'
-    - 'month'
+    # - 'month'
+
+DROP_COLUMNS:
+  - 'day'
+  - 'month'
+  - 'location'
+  - 'date_time'
 
 
 

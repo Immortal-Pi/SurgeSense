@@ -83,8 +83,12 @@
                             <option value="1.0">1.0</option>
                             <option value="1.25">1.25</option>
                             <option value="1.5">1.5</option>
+                            <option value="1.75">1.75</option>
                             <option value="2.0">2.0</option>
+                            <option value="2.25">2.25</option>
                             <option value="2.5">2.5</option>
+                            <option value="2.75">2.75</option>
+                            <option value="3">3</option>
                         </select>
                     </div>
 
@@ -95,13 +99,13 @@
 
                     <div class="form-row">
                         <label for="clouds"> Clouds:</label>
-						<input type="text" name="clouds" id="clouds" class="input-text" placeholder="clouds" required>
+						<input type="text" name="clouds" id="clouds" class="input-text" placeholder="0 - 1" required>
 					</div>
 
 
                     <div class="form-row">
                         <label for="pressure"> Pressure:</label>
-						<input type="text" name="pressure" id="pressure" class="input-text" placeholder="pressure" required>
+						<input type="text" name="pressure" id="pressure" class="input-text" placeholder="900 - 1050" required>
 					</div>
 
 				</div>
@@ -111,12 +115,12 @@
 
                     <div class="form-row">
                         <label for="rain"> Rain:</label>
-						<input type="text" name="rain" id="rain" class="input-text" placeholder="rain" required>
+						<input type="text" name="rain" id="rain" class="input-text" placeholder="0.0 - 0.8" required>
 					</div>
 
                     <div class="form-row">
                         <label for="humidity"> Humidity:</label>
-						<input type="text" name="humidity" id="humidity" class="input-text" placeholder="humidity" required>
+						<input type="text" name="humidity" id="humidity" class="input-text" placeholder="0.1 - 1" required>
 					</div>
 
 				</div>
@@ -126,12 +130,12 @@
 
                     <div class="form-row">
                         <label for="wind"> Wind:</label>
-						<input type="text" name="wind" id="wind" class="input-text" placeholder="wind" required>
+						<input type="text" name="wind" id="wind" class="input-text" placeholder="0 - 20" required>
 					</div>
 
                     <div class="form-row">
                         <label for="temp"> temperature:</label>
-						<input type="text" name="temp" id="temp" class="input-text" placeholder="temp" required>
+						<input type="text" name="temp" id="temp" class="input-text" placeholder="0 - 70" required>
 					</div>
 
                     
@@ -139,32 +143,29 @@
 				</div>
 
 
-                <div class="form-row-total">
-
-                    <div class="form-row">
-                        <label for="day"> Day:</label>
-						<input type="text" name="day" id="day" class="input-text" placeholder="day" required>
-					</div>
-
-                    <div class="form-row">
-                        <label for="hour"> Hour:</label>
-						<input type="text" name="hour" id="hour" class="input-text" placeholder="hour" required>
-					</div>
-
-				</div>
+                
 
 
                 <div class="form-row-total">
 
-                    <div class="form-row">
+                    <!-- <div class="form-row">
                         <label for="month"> month:</label>
 						<input type="text" name="month" id="month" class="input-text" placeholder="month" required>
+					</div> -->
+                    <div class="form-row">
+                        <label for="hour"> Hour of the day:</label>
+						<input type="text" name="hour" id="hour" class="input-text" placeholder="1-24" required>
 					</div>
 
                     <div class="form-row">
-                        <label for="cab_type"> Cab Type:</label>
-						<input type="text" name="cab_type" id="cab_type" class="input-text" placeholder="cab_type" required>
-					</div>
+                        <label for="cab_type">Cab Type:</label>
+                        <select name="cab_type" id="cab_type" class="input-text" required>
+                            <option value="" disabled selected>select cab type</option>
+                            <option value="Lyft">Lyft</option>
+                            <option value="Uber">Uber</option>
+    
+                        </select>
+                    </div>
 
 
 				</div>
@@ -172,23 +173,66 @@
                 <div class="form-row-total">
 
                     <div class="form-row">
-                        <label for="source"> source:</label>
-						<input type="text" name="source" id="source" class="input-text" placeholder="source" required>
-					</div>
+                        <label for="source">Source:</label>
+                        <select name="source" id="source" class="input-text" required>
+                            <option value="" disabled selected>Select Source</option>
+                            <option value="Haymarket Square">Haymarket Square</option>
+                            <option value="Haymarket Square">Beacon Hill</option>
+                            <option value="Back Bay">Back Bay</option>
+                            <option value="North End">North End</option>
+                            <option value="North Station">North Station</option>
+                            <option value="Boston University">Boston University</option>
+                            <option value="Fenway">Fenway</option>
+                            <option value="South Station">South Station</option>
+                            <option value="Theatre District">Theatre District</option>
+                            <option value="West End">West End</option>
+                            <option value="Financial District">Financial District</option>
+                            <option value="Northeastern University">Northeastern University</option>
+                        </select>
+                    </div>
 
                     <div class="form-row">
-                        <label for="destination"> destination:</label>
-						<input type="text" name="destination" id="destination" class="input-text" placeholder="destination" required>
-					</div>
+                        <label for="source">Destination:</label>
+                        <select name="destination" id="destination" class="input-text" required>
+                            <option value="" disabled selected>Select Destination</option>
+                            <option value="Haymarket Square">Haymarket Square</option>
+                            <option value="Haymarket Square">Beacon Hill</option>
+                            <option value="Back Bay">Back Bay</option>
+                            <option value="North End">North End</option>
+                            <option value="North Station">North Station</option>
+                            <option value="Boston University">Boston University</option>
+                            <option value="Fenway">Fenway</option>
+                            <option value="South Station">South Station</option>
+                            <option value="Theatre District">Theatre District</option>
+                            <option value="West End">West End</option>
+                            <option value="Financial District">Financial District</option>
+                            <option value="Northeastern University">Northeastern University</option>
+                        </select>
+                    </div>
 
 
 				</div>
                 <div class="form-row-total">
 
                     <div class="form-row">
-                        <label for="name"> cab name:</label>
-						<input type="text" name="name" id="name" class="input-text" placeholder="name" required>
-					</div>
+                        <label for="name">Car Type:</label>
+                        <select name="name" id="name" class="input-text" required>
+                            <option value="" disabled selected>Car Type</option>
+                            <option value="Shared">Shared</option>
+                            <option value="Lux">Lux</option>
+                            <option value="Lux Black XL">Lux Black XL</option>
+                            <option value="Lyft XL">Lyft XL</option>
+                            <option value="Lux Black">Lux Black</option>
+                            <option value="Lyft">Lyft</option>
+                            <option value="UberXL">UberXL</option>
+                            <option value="Black">Black</option>
+                            <option value="UberX">UberX</option>
+                            <option value="WAV">WAV</option>
+                            <option value="Black SUV">Black SUV</option>
+                            <option value="UberPool">UberPool</option>
+
+                        </select>
+                    </div>
 
                    
 

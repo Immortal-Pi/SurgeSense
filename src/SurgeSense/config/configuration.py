@@ -56,7 +56,7 @@ class ConfigurationManager:
     def get_model_train_config(self)->ModelTrainConfig:
         config=self.config.model_trainer
         params=self.param.select_model 
-        schema=self.schema.TARGET_COLUMN
+        schema=self.schema
         create_directories([config.root_dir])
 
         model_train_config=ModelTrainConfig(
@@ -69,9 +69,12 @@ class ConfigurationManager:
             min_samples_split=params.min_samples_split,
             learning_rate=params.learning_rate,
             select_model=params.algo,
-            target_column=schema.name
-        )
+            target_column=schema.TARGET_COLUMN.name,
+            categorical_columns=schema.TRANSFORM.CATEGORICAL_DATA,
+            numerical_columns=schema.TRANSFORM.NUMERICAL_DATA,
+            drop_columns=schema.DROP_COLUMNS
 
+        )
         return model_train_config
     
     def get_model_evaluation_config(self)->ModelEvaluationConfig:

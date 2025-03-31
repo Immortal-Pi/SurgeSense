@@ -29,19 +29,19 @@ def index():
             rain=float(request.form['rain'])
             humidity=float(request.form['humidity'])
             wind=float(request.form['wind'])
-            day=float(request.form['day'])
+            # day=float(request.form['day'])
             hour=float(request.form['hour'])
-            month=float(request.form['month'])
+            # month=float(request.form['month'])
             cab_type=str(request.form['cab_type'])
             destination=str(request.form['destination'])
             source=str(request.form['source'])
             name=str(request.form['name'])
         
             data=[
-                distance,cab_type,destination,source,surge_multiplier,name,temp,clouds,pressure,rain,humidity,wind,day,hour,month
+                distance,cab_type,destination,source,surge_multiplier,name,temp,clouds,pressure,rain,humidity,wind,hour
             ]
             columns = ['distance','cab_type','destination','source','surge_multiplier','name',
-           'temp','clouds','pressure','rain','humidity','wind','day','hour','month']
+           'temp','clouds','pressure','rain','humidity','wind','hour']
             df=pd.DataFrame([data],columns=columns)
             obj=PredictionPipeline()
             predict=obj.predict(df)

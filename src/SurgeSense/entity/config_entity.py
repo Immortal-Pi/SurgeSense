@@ -22,6 +22,7 @@ class DataTransformationConfig:
     categorical_columns: list
     numerical_columns: list 
 
+
 @dataclass
 class ModelTrainConfig:
     root_dir: Path 
@@ -34,6 +35,10 @@ class ModelTrainConfig:
     learning_rate: int
     select_model: str
     target_column: str 
+    categorical_columns:list
+    numerical_columns:list
+    drop_columns:list 
+ 
 
 @dataclass(frozen=True)
 class ModelEvaluationConfig:

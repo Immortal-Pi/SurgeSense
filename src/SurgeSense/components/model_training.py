@@ -20,8 +20,8 @@ class ModelTrainer:
 
     def create_pipeline(self):
         
-        categorical_columns=['cab_type','destination','source','name']
-        numerical_columns=['distance','surge_multiplier','temp','clouds','pressure','rain','humidity','wind','day','hour','month']
+        categorical_columns=self.config.categorical_columns
+        numerical_columns=self.config.numerical_columns
 
         numerical_preprocessor=Pipeline(
             steps=[
@@ -84,10 +84,10 @@ class ModelTrainer:
         train_data=pd.read_csv(self.config.train_data_path)
         test_data=pd.read_csv(self.config.test_data_path)
 
-        train_x=train_data.drop(columns=[self.config.target_column,'location','date_time'],axis=1)
-        test_x=test_data.drop(columns=[self.config.target_column,'location','date_time'],axis=1)
+        train_x=train_data.drop([self.config.target_column]+self.config.drop_columns,axis=1)
+        test_x=test_data.drop([self.config.target_column]+self.config.drop_columns,axis=1)
         train_y=train_data[[self.config.target_column]]
         test_y=test_data[[self.config.target_column]]
-        
+        # print(test_x.columns)
         pipe.fit(train_x,train_y)
         joblib.dump(pipe,os.path.join(self.config.root_dir,self.config.model_name))
