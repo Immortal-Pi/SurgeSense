@@ -3474,3 +3474,13 @@ x==========x]
 [2025-03-31 23:00:11,916: INFO :main : >>>>> stage MODEL EVALUATION STAGE completed <<<<<
 
  x==========x]
+[2025-04-01 18:23:22,232: INFO :data_validation_stage : >>>>> stage Data Validation stage started <<<<<]
+[2025-04-01 18:23:22,244: INFO :common : yaml file: config\config.yaml loaded successfully]
+[2025-04-01 18:23:22,249: INFO :common : yaml file: params.yaml loaded successfully]
+[2025-04-01 18:23:22,254: INFO :common : yaml file: schema.yaml loaded successfully]
+[2025-04-01 18:23:22,255: INFO :common : created directory at: artifacts]
+[2025-04-01 18:23:22,256: INFO :common : created directory at: artifacts/data_validation]
+[2025-04-01 18:23:24,261: INFO :data_validation : Validation status: True]
+[2025-04-01 18:23:24,290: INFO :data_validation_stage : >>>>> stage Data Validation stage completed <<<<< 
+
+ x==========x]
