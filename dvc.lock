@@ -38,7 +38,7 @@ stages:
         select_model.learning_rate: 0.1
         select_model.max_depth: 15
         select_model.min_samples_split: 0
-        select_model.n_estimators: 150
+        select_model.n_estimators: 180
   data_transformation:
     cmd: python src/SurgeSense/pipeline/data_transform_stage.py
     deps:
@@ -91,12 +91,12 @@ stages:
         select_model.learning_rate: 0.1
         select_model.max_depth: 15
         select_model.min_samples_split: 0
-        select_model.n_estimators: 150
+        select_model.n_estimators: 180
     outs:
     - path: artifacts/model_trainer
       hash: md5
-      md5: 41d8655b88547888fa3a461334518cd1.dir
-      size: 52008590
+      md5: e45e713432b8977310fb3443da571cdd.dir
+      size: 61200096
       nfiles: 1
   model_evaluation:
     cmd: python src/SurgeSense/pipeline/model_evaluation.py
@@ -108,8 +108,8 @@ stages:
       nfiles: 2
     - path: artifacts/model_trainer/model.joblib
       hash: md5
-      md5: 9e835d84a9a0afb70fbf99d24b0f0ea6
-      size: 52008590
+      md5: c575aba4fd9a4769a97ccaf9247b314f
+      size: 61200096
     - path: config/config.yaml
       hash: md5
       md5: ed629b71afc1e7324e23a9bd68d6a94b
@@ -128,10 +128,10 @@ stages:
         select_model.learning_rate: 0.1
         select_model.max_depth: 15
         select_model.min_samples_split: 0
-        select_model.n_estimators: 150
+        select_model.n_estimators: 180
     outs:
     - path: artifacts/model_evaluation
       hash: md5
-      md5: 84896f6aed7c83c7891418eae1cbf441.dir
-      size: 105
+      md5: 736e9608c61f50a2925594b51ce8bcc2.dir
+      size: 104
       nfiles: 1
