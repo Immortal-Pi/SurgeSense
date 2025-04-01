@@ -6,6 +6,7 @@ on:
       - main
     paths-ignore:
       - 'README.md'
+      - logs/logging.log  
 
 permissions:
   id-token: write
