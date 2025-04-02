@@ -17,8 +17,8 @@ if sys.argv[1]=='XGBoost':
         logger.exception(e)
         raise e 
 
-elif sys.argv[1]=='RandomForest tuning':
-    STAGE_NAME='RandomForest'
+elif sys.argv[1]=='RandomForest':
+    STAGE_NAME='RandomForest Tuning'
     try:
         logger.info(f'>>>>> stage {STAGE_NAME} started <<<<<')
         data_ingestion=ModelTrainerTrainingPipelineRandomForest()

@@ -3,11 +3,6 @@
 The goal of this project was to build a full end-to-end machine learning pipeline to predict surge pricing for cab rides, specifically comparing Uber and Lyft services in the New York City area. The pipeline aimed to leverage historical ride, weather, and event data to forecast price surges based on factors such as time, location, weather, and demand patterns. As part of the modeling phase, we utilized multiple machine learning algorithms—including Random Forest, XGBoost, and Gradient Descent-based models—and selected the best-performing model for accurate surge price prediction.
 
 
-
-to hyper parameter training run python hyperparameter_tuning RandomForest - for tuning randomforest 
-to hyper parameter training run python hyperparameter_tuning RandomForest - for tuning XGBoost 
-to hyper parameter training run python hyperparameter_tuning RandomForest - for tuning GradientBoosting 
-
 # MLOps-Driven Machine Learning Project on EC2
 
 This repository demonstrates the implementation of MLOps principles in the development, deployment, and monitoring of a machine learning application. The project integrates automation, continuous integration/continuous deployment (CI/CD), and scalability to ensure efficient and reliable ML workflows.
@@ -51,11 +46,18 @@ pip install -r requirements.txt
 ```bash
 python main.py 
 ```
+### Optional - for HyperParameter Tuning 
+
+RandomForest - python hyperparameter_tuning.py RandomForest
+XGBoost - python hyperparameter_tuning.py XGBoost
+Gradient Boosting - python hyperparameter_tuning.py GradientBoosting
+
 
 # Finally run the following command
 ```bash
 python app.py
 ```
+
 
 Now,
 
