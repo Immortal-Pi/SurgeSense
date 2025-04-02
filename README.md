@@ -1,4 +1,8 @@
-# Surge Sense
+# Surge Sense - An ML prediction model for surge price 
+
+The goal of this project was to build a full end-to-end machine learning pipeline to predict surge pricing for cab rides, specifically comparing Uber and Lyft services in the New York City area. The pipeline aimed to leverage historical ride, weather, and event data to forecast price surges based on factors such as time, location, weather, and demand patterns. As part of the modeling phase, we utilized multiple machine learning algorithms—including Random Forest, XGBoost, and Gradient Descent-based models—and selected the best-performing model for accurate surge price prediction.
+
+
 
 to hyper parameter training run python hyperparameter_tuning RandomForest - for tuning randomforest 
 to hyper parameter training run python hyperparameter_tuning RandomForest - for tuning XGBoost 
@@ -9,9 +13,9 @@ to hyper parameter training run python hyperparameter_tuning RandomForest - for 
 This repository demonstrates the implementation of MLOps principles in the development, deployment, and monitoring of a machine learning application. The project integrates automation, continuous integration/continuous deployment (CI/CD), and scalability to ensure efficient and reliable ML workflows.
 
 ##  Features:
-- **Dataset**: Wine Quality dataset 
-    - dataset like :- https://www.kaggle.com/datasets/yasserh/wine-quality-dataset  
-- **Model**: ElasticNet
+- **Dataset**: Uber & Lyft dataset  
+    - dataset:- https://www.kaggle.com/datasets/ravi72munde/uber-lyft-cab-prices
+- **Model**: XGBoost
 - **MLOps Integration**:
     - Config-driven pipeline setup with YAML.
     - Data versioning and workflow tracking using DVC.
@@ -28,20 +32,24 @@ This repository demonstrates the implementation of MLOps principles in the devel
 ### STEPS:
 Clone the repository
 ```bash
-https://github.com/Immortal-Pi/ML-project-with-MLFlow
+https://github.com/Immortal-Pi/SurgeSense.git
 ```
 
 ### STEP 01- Create a conda environment after opening the repository
 ```bash 
-conda create -n mlopscnn python=3.9 -y
+conda create -p venv python==3.10 -y
 ```
 ```bash 
-conda activate mlopsML
+conda activate venv/
 ```
 
 ### STEP 02- install the requirements
 ```bash
 pip install -r requirements.txt
+```
+### STEP 03- train the model 
+```bash
+python main.py 
 ```
 
 # Finally run the following command
@@ -56,7 +64,7 @@ open up you local host and port
 
 # MLflow & pipeline tracking
 
-dagshub repo : https://dagshub.com/Immortal-Pi/ML-project-with-MLFlow 
+dagshub repo : https://dagshub.com/Immortal-Pi/SurgeSense
 
 ```bash
 import dagshub
@@ -64,14 +72,22 @@ dagshub.init(repo_owner='your-github-username', repo_name='your-repository-name'
 ```
 
 
-### mlflow experiments 
-```bash 
-- mlflow ui 
-``` 
+### mlflow experiment tacking and DVC pipeline tracking 
+
+MLFlow - experiment tracking 
+
 ![MLFlow Workflow](https://github.com/Immortal-Pi/ML-project-with-MLFlow/blob/main/documentation/mlflow1.png)
 
 ![MLFlow Workflow](https://github.com/Immortal-Pi/ML-project-with-MLFlow/blob/main/documentation/mlflow2.png)
 
+DVC - pipeline tracking 
+
+```bash 
+dvc init 
+dvc repro 
+dvc dag 
+```
+![DVC pipeline ](https://github.com/Immortal-Pi/ML-project-with-MLFlow/blob/main/documentation/mlflow2.png)
 
 ## AWS CICD Deployment with Github Actions 
 
@@ -106,7 +122,7 @@ dagshub.init(repo_owner='your-github-username', repo_name='your-repository-name'
 sudo apt-get update -y
 sudo apt-get upgrade -y 
 
-# required 
+# required to install dockers 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 sudo usermod -aG docker ubuntu 
@@ -114,14 +130,14 @@ newgrp docker
 ```
 ### 6. Configure EC2 as self-hosted runner: 
 ``` bash 
-settings> actions> runner>new self hosted runner > choose os > then sun the command one by one 
+settings -> actions -> runner -> new self hosted runner -> choose os -> then run the command one by one on the EC2 console
 ```
 ### 7. setup github secrets 
 ``` bash
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 AWS_REGION = us-east-1
-AWS_ECR_LOGIN_URI = demo>>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
+AWS_ECR_LOGIN_URI = example >>  566373416292.dkr.ecr.ap-south-1.amazonaws.com
 ECR_REPOSITORY_NAME = simple-app
 ```
 
@@ -134,17 +150,19 @@ ECR_REPOSITORY_NAME = simple-app
 ## Tech Stack 
 
 - **Programming Language**: Python
-- **Deep Learning Framework**: Keras with TensorFlow backend
+- **Hyperparamter Tuning**: GridSearchCV and HyperOpt
+- **ML algorithms**: Random Forest, XGBoost, Gradient Boosting 
 - **MLOps Tools**:
     - Docker for containerization
     - Github actions CICD pipelines
-- **Web Framework**: Flask for model deployment
-- **Cloud Platform**: AWS for hosting the model
+- **Web Framework**: Flask for frontend application 
+- **Cloud Platform**: AWS EC2 for hosting the application
 - **Version Control**: Git and GitHub
 - **Data Utilities**: YAML, JSON handling, and custom preprocessing functions
 
 ## Conclusion
-This project highlights the integration of MLOps principles in managing the entire machine learning lifecycle. While the focus was on building a wine quality prediction model using regression techniques, the core objective was to emphasize the importance of project structure, automation of workflows, and the use of tools like Docker for deployment. Additionally, a CI/CD pipeline was implemented to automate the testing, building, and deployment processes, ensuring consistent and reliable updates to the application. This project serves as a foundation for understanding how to design scalable, maintainable, and efficient ML pipelines, ensuring reproducibility and streamlined collaboration in real-world scenarios.
+
+The implemented pipeline successfully automated data collection, preprocessing, feature engineering, model training, and prediction. Among the models tested, XGBoost outperformed others based on key evaluation metrics including Root Mean Squared Error (RMSE), Mean Squared Error (MSE), and R-squared (R²) score. As a result, the XGBoost model was used for final predictions. The deployed system provided reliable, real-time surge pricing forecasts, helping users make informed decisions when choosing between Uber and Lyft in New York City.
 
 
 
