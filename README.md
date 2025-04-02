@@ -49,7 +49,9 @@ python main.py
 ### Optional - for HyperParameter Tuning 
 
 RandomForest - python hyperparameter_tuning.py RandomForest
+
 XGBoost - python hyperparameter_tuning.py XGBoost
+
 Gradient Boosting - python hyperparameter_tuning.py GradientBoosting
 
 
@@ -78,9 +80,11 @@ dagshub.init(repo_owner='your-github-username', repo_name='your-repository-name'
 
 MLFlow - experiment tracking 
 
-![MLFlow Workflow](https://github.com/Immortal-Pi/ML-project-with-MLFlow/blob/main/documentation/mlflow1.png)
+![MLFlow Workflow](https://github.com/Immortal-Pi/SurgeSense/blob/main/screenshots/random_forest.png)
 
-![MLFlow Workflow](https://github.com/Immortal-Pi/ML-project-with-MLFlow/blob/main/documentation/mlflow2.png)
+![MLFlow Workflow](https://github.com/Immortal-Pi/SurgeSense/blob/main/screenshots/gradient%20boosting.png)
+
+![MLFlow Workflow](https://github.com/Immortal-Pi/SurgeSense/blob/main/screenshots/xgboost.png)
 
 DVC - pipeline tracking 
 
@@ -89,7 +93,7 @@ dvc init
 dvc repro 
 dvc dag 
 ```
-![DVC pipeline ](https://github.com/Immortal-Pi/ML-project-with-MLFlow/blob/main/documentation/mlflow2.png)
+![DVC pipeline ](https://github.com/Immortal-Pi/SurgeSense/blob/main/screenshots/dagshub.png)
 
 ## AWS CICD Deployment with Github Actions 
 
@@ -145,7 +149,7 @@ ECR_REPOSITORY_NAME = simple-app
 
 ## Demo 
 
-![Demo of ML Project](https://github.com/Immortal-Pi/ML-project-with-MLFlow/blob/main/documentation/demo.gif)
+![Demo of ML Project](https://github.com/Immortal-Pi/SurgeSense/blob/main/screenshots/dem.gif)
 
 
 
