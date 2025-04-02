@@ -80,10 +80,13 @@ dagshub.init(repo_owner='your-github-username', repo_name='your-repository-name'
 
 MLFlow - experiment tracking 
 
+- random forest 
 ![MLFlow Workflow](https://github.com/Immortal-Pi/SurgeSense/blob/main/screenshots/random_forest.png)
 
+- gradient boosting
 ![MLFlow Workflow](https://github.com/Immortal-Pi/SurgeSense/blob/main/screenshots/gradient%20boosting.png)
 
+- xgboost 
 ![MLFlow Workflow](https://github.com/Immortal-Pi/SurgeSense/blob/main/screenshots/xgboost.png)
 
 DVC - pipeline tracking 
